@@ -1,7 +1,6 @@
 const express = require("express");
 const WebSocket = require("ws");
 const http = require("http");
-const { send } = require("process");
 
 const DEVICES = [];
 const app = express();
@@ -36,6 +35,11 @@ const sendAll = (message)=>{
      }
 }
 
- app.get('/',(req,res)=>{
-      res.send("Merhaba burası Profff'un çöplüğü");
-     });
+app.get('/',(req,res)=>{
+    res.json("ÜMİT ÖZDAĞ REİSSSSSSSS");
+});
+
+app.get('/kullanicilar',(req,res)=>{
+    const num = DEVICES.length;
+    res.json(num);
+});
