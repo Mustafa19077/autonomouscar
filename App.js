@@ -12,12 +12,15 @@ const server = http.createServer(app);
 const wss = new WebSocket.Server({server});
 
 wss.on('connection',(ws)=>{
+    console.log("yeni bağlantı");
     DEVICES.push(ws);
     ws.on('message',(data)=>{
-        console.log(data);
-        sendAll(data);
-    })
-    ws.on('close',(ws)=>{
+        const json = JSON.parse(data);
+        const str = JSON.stringify(json);
+        sendAll(str);
+    });
+    ws.on('close',()=>{
+        console.log("Kullanıcı çıktı");
         DEVICES.splice(ws,1);
     })
 });
