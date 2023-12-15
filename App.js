@@ -28,7 +28,7 @@ server.listen(PORT,()=>{
 
 const sendAll = (message)=>{
     for (var i=0; i < DEVICES.length; i++) {
-        DEVICES[i].send(message);  broadcast messages to everyone including sender
+        DEVICES[i].send(message);
      }
 }
 
