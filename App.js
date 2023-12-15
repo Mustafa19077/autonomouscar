@@ -35,4 +35,3 @@ const sendAll = (message)=>{
  app.get('/',(req,res)=>{
       res.send("Merhaba burası Profff'un çöplüğü");
      });
-})
