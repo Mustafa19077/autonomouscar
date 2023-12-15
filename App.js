@@ -14,6 +14,7 @@ const wss = new WebSocket.Server({server});
 wss.on('connection',(ws)=>{
     DEVICES.push(ws);
     ws.on('message',(data)=>{
+        console.log(data);
         sendAll(data);
     })
     ws.on('close',(ws)=>{
