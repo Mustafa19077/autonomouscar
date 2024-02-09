@@ -21,7 +21,8 @@ wss.on('connection',(ws)=>{
     });
     ws.on('close',()=>{
         console.log("Kullanıcı çıktı");
-//        DEVICES.splice(ws,1);
+        const removeIndex = DEVICES.indexOf(ws);
+        DEVICES.splice(removeIndex,1);
     })
 });
 
