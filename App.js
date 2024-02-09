@@ -16,11 +16,12 @@ wss.on('connection',(ws)=>{
     ws.on('message',(data)=>{
         const json = JSON.parse(data);
         const str = JSON.stringify(json);
+        console.log("message : "+str);
         sendAll(str);
     });
     ws.on('close',()=>{
         console.log("Kullanıcı çıktı");
-        DEVICES.splice(ws,1);
+//        DEVICES.splice(ws,1);
     })
 });
 
